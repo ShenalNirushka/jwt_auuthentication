@@ -28,12 +28,12 @@ public class UserService {
 
     public void initRolesAndUser(){
         Role adminRole = new Role();
-        adminRole.setRoleName("Admin");
+        adminRole.setRoleName("ADMIN_ROLE");
         adminRole.setRoleDescription("Admin role");
         roleDao.save(adminRole);
 
         Role userRole = new Role();
-        userRole.setRoleName("User");
+        userRole.setRoleName("USER_ROLE");
         userRole.setRoleDescription("Default role for newly created record");
         roleDao.save(userRole);
 

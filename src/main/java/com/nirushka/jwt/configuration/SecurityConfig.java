@@ -100,20 +100,20 @@ public class SecurityConfig {
 
     //*********************************************************************************************************
 
-//    @Autowired
-//    private DataSource dataSource;
-//
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.jdbcAuthentication()
-//                .dataSource(dataSource)
-//                .usersByUsernameQuery("select user_name,password, TRUE as enabled "
-//                        + "from user "
-//                        + "where user_name = ?")
-//                .authoritiesByUsernameQuery("select user_id,'ROLE_US' as role_id "
-//                        + "from user_role "
-//                        + "where user_id = ?");
-//    }
+    @Autowired
+    private DataSource dataSource;
+
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth.jdbcAuthentication()
+                .dataSource(dataSource)
+                .usersByUsernameQuery("select user_name,password, TRUE as enabled "
+                        + "from user "
+                        + "where user_name = ?")
+                .authoritiesByUsernameQuery("select user_id,role_id "
+                        + "from user_role "
+                        + "where user_id = ?");
+    }
     //************************************************************************************************************
 
 //    @Bean

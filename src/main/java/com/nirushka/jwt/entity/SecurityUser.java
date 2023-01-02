@@ -55,7 +55,7 @@ public class SecurityUser implements UserDetails {
     @Override
     public boolean isAccountNonLocked() {
         return true;
-    }x
+    }
 
     @Override
     public boolean isCredentialsNonExpired() {
